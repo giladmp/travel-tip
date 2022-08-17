@@ -4,7 +4,6 @@ export const mapService = {
     panTo
 }
 
-
 // Var that is used throughout this Module (not global)
 var gMap
 
@@ -19,7 +18,9 @@ function initMap(lat = 32.067670, lng = 34.797700) {
                 zoom: 15
             })
             console.log('Map!', gMap)
+            return gMap
         })
+        .then(addListener)
 }
 
 function addMarker(loc) {
@@ -49,4 +50,14 @@ function _connectGoogleApi() {
         elGoogleApi.onload = resolve
         elGoogleApi.onerror = () => reject('Google script failed to load')
     })
+}
+
+function addListener(map) {
+    map.addListener('click', (mapsMouseEvent) => {
+        const lat = mapsMouseEvent.latLng.lat()
+        const lng = mapsMouseEvent.latLng.lng()
+
+        
+    })
+    // return map
 }
