@@ -1,7 +1,9 @@
+
+import { locService } from './loc.service.js'
 export const mapService = {
     initMap,
     addMarker,
-    panTo
+    panTo,
 }
 
 // Var that is used throughout this Module (not global)
@@ -56,8 +58,8 @@ function addListener(map) {
     map.addListener('click', (mapsMouseEvent) => {
         const lat = mapsMouseEvent.latLng.lat()
         const lng = mapsMouseEvent.latLng.lng()
-
-        
+        locService.getLocInfo(lat, lng)
+        addMarker({lat, lng})     
     })
-    // return map
 }
+
