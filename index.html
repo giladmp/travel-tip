@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelTip</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
 </head>
+
 <body>
-    <h1>TravelTip Starter</h1>
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
-    <button onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
-    <button onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
-    <button onclick="onPanTo()"class="btn-pan">Pan Map to Tokyo</button>
 
 
-    <span>hola</span>
-    <p>You are at: <span class="user-pos"></span></p>
-    <p>Locations: 
-        <pre class="locs"></pre>
-    </p>
+    <div class="header">TravelTip</div>
+
+    <div class="grid-container">
+
+        <div class="flex-container">
+
+            <div class="location-copy-contianer">
+                <div>Your Location:<span class="user-pos"></span></div>
+                <button class="button">Copy Location</button>
+            </div>
+
+            <div class="move-to">
+                <label>
+                    <input placeholder="Enter Location" type="text">
+                    <button class="button">Go</button>
+                </label>
+                <button class="button">My Location</button>
+            </div>
+
+        </div>
+
+        <div class="map-weather-container">
+            <div class="weather">Weather Map</div>
+            <div id="map"></div>
+        </div>
+
+        <div class="buttons-grid">
+            <button class="button" onclick="onAddMarker()" class="btn-add-marker">Add Marker Speific Location</button>
+            <button class="button" onclick="onGetUserPos()" class="btn-user-pos">Get User Position</button>
+            <button class="button" onclick="onGetLocs()" class="btn-get-locs">Get Locations</button>
+            <button class="button" onclick="onPanTo()" class="btn-pan">Pan Map to Tokyo</button>
+        </div>
+
+        <div class="locations-header">Locations:</div>
+        
+        <div class="locations-table">
+            <div class="text-column">
+                <pre class="locs"></pre>
+            </div>
+            <div class="action-column"></div>
+        </div>
 
     <script type="module" src="js/app.controller.js"></script>
 </body>
+
 </html>

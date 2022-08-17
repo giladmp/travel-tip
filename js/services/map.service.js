@@ -59,5 +59,4 @@ function addListener(map) {
 
         
     })
-    // return map
 }
