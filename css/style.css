@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #FFF5E1;
+}
+
 .header {
     color: #781C68;
     width: fit-content;
@@ -37,6 +49,7 @@
     background-color: #781C68;
     height: 400px;
     border-radius: 15px;
+    color: #FFD39A;
     
 }
 
@@ -91,4 +104,9 @@ margin-right: auto;
     margin: 5px;
     color: white;
     font-size: 16px;
+}
+
+.button:hover {
+    color: #FFD39A;
+    cursor: pointer;
 }
