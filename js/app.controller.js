@@ -60,8 +60,3 @@ function onPanTo() {
 
 
 
-function onMApClick() {
-
-}
-
-

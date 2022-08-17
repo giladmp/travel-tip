@@ -5,9 +5,11 @@ export const locService = {
 }
 
 const gLoc = { 
-    currentLocIdx: 0,
+    currentLocIdx: -1,
     locs: []
 } 
+
+const STORAGE_KEY = 'locationsDB'
 
 function getLocs() {
     return new Promise((resolve, reject) => {
@@ -33,8 +35,9 @@ function createLoc(lat, lng, address, id){
         lng,
         createdAt: Date.now()
     }
-    console.log('location:', location)
-    
     gLoc.locs.push(location)
+    storageService.saveToStorage(STORAGE_KEY, gLoc.locs)
     gLoc.currentLocIdx++
 }
+
+// function deleteLoc
