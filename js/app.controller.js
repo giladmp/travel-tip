@@ -38,6 +38,7 @@ function onGetLocs() {
         .then(locs => {
             console.log('Locations:', locs)
             document.querySelector('.locs').innerText = JSON.stringify(locs, null, 2)
+            document.querySelector('.action-column').innerHTML = `<button class="button">Go</button><button class="button">Delete</button>`
         })
 }
 
